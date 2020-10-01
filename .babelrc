@@ -1,0 +1,17 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+        "targets": {
+          "edge": 10
+        },
+        "useBuiltIns": "entry"
+      }
+    ]
+  ],
+  "plugins": [
+       "transform-class-properties",
+       "transform-object-rest-spread"
+   ]
+}

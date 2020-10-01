@@ -2,7 +2,7 @@
   "name": "picmapper",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/app.jsx",
   "dependencies": {
     "core-js": "^3.6.5",
     "express": "^4.17.1",
