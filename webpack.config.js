@@ -18,7 +18,7 @@ var config = {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        exclude: /(node_modules|src\/phaser)/,
+        exclude: /node_modules/,
         use: {
           loader: 'babel-loader'
         }

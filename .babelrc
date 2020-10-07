@@ -1,17 +1,18 @@
 {
   "presets": [
     [
-      "env",
+      "@babel/preset-env",
       {
         "targets": {
           "edge": 10
         },
         "useBuiltIns": "entry"
       }
-    ]
+    ],
+    "@babel/preset-react"
   ],
   "plugins": [
-       "transform-class-properties",
-       "transform-object-rest-spread"
+       "@babel/plugin-proposal-class-properties",
+       "@babel/plugin-proposal-object-rest-spread"
    ]
 }
