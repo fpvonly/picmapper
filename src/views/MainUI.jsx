@@ -4,6 +4,11 @@ import PropTypes from 'prop-types';
 import {withRouter} from 'react-router';
 //import {BrowserRouter, Link, Route, IndexRoute, Switch} from 'react-router-dom';
 
+import { observer } from "mobx-react";
+import { withStore } from "../state/loginStore";
+
+@withStore
+@observer
 class MainUI extends React.Component {
 
   constructor(props) {
@@ -28,8 +33,12 @@ class MainUI extends React.Component {
 
   render() {
     const pathName = this.props.location.pathName;
+    const { store } = this.props;
+
+console.log('test',store);
 
     return <div>
+      {store.title}
       <div>{this.props.children}</div>
     </div>
   }
