@@ -17,7 +17,7 @@ ReactDOM.render(
       <Link to="/">Home</Link>
       <Link to="/map">Map</Link>
     </nav>
-    <LoginStoreProvider store={LoginStore}>
+    <LoginStoreProvider store={loginStore}>
       <MainUI>
         <Switch>
           <Route exact path="/" component={Home} />

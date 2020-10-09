@@ -35,11 +35,11 @@ class MainUI extends React.Component {
     const pathName = this.props.location.pathName;
     const { store } = this.props;
 
-console.log('test',store);
+console.log('test',store.title);
 
     return <div>
       {store.title}
-      <div>{this.props.children}</div>
+      <div onClick={ () => {store.setTitle('Testing Update Title Function')} }>{this.props.children}</div>
     </div>
   }
 
