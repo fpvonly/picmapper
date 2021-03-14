@@ -129,27 +129,24 @@
     .appGrid .header {
       grid-column-start: 1;
       grid-column-end: 3;
-      background-color: #000;
-      opacity: 0.1;
+      display: flex;
+      align-items: center;
     }
 
     .appGrid .menu {
-      background-color: #000;
-      opacity: 0.1;
+      background-color: rgba(0, 0 , 0, 0.1 );
     }
 
     .appGrid .map {
-      background-color: #000;
+      background-color: rgba(0, 0 , 0, 0.1 );
       grid-column-start: 2;
       grid-column-end: 3;
-      opacity: 0.1;
     }
 
     .appGrid .footer {
       grid-column-start: 1;
       grid-column-end: 3;
-      opacity: 0.1;
-      background-color: #000;
+      background-color: rgba(0, 0 , 0, 0.1 );
     }
 
   /*  .loginCenter .loginBox {
@@ -165,6 +162,45 @@
       min-width: 250px;
     }*/
 
+    .header .logo {
+      margin-right: 6rem;
+      font-size: 3rem;
+      font-weight: bold;
+      color: #ffffff;
+      padding: 2rem;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    .menuBtn {
+      display: inline-block;
+      border: none;
+      border-radius: 0;
+      padding: 2rem;
+      box-shadow: 10px 0px 1px 5px rgb(0 0 0 / 10%);
+      background: #9d00ff;
+      transform: skewX(331deg);
+      transition:all 0.2s ease-in-out;
+      min-width: 100px;
+      margin-right: 4rem;
+      color: #ffffff;
+      font-size: 1.3rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .menuBtn.logout {
+      margin-left: auto;
+    }
+
+    .menuBtn:hover {
+      box-shadow: -5px 0px 1px 0px #9d00ff;
+      background-color: #fcdc00;
+      color: #000000;
+    }
+
 
 
     </style>
@@ -177,7 +213,14 @@
       <div class="color three"></div>
     </div>
     <div class="appGrid">
-      <div class="header">header</div>
+      <div class="header">
+        <div class="logo">Picmapper</div>
+        <span class="menuBtn">View Map</span>
+        <span class="menuBtn">Add/Edit Photos</span>
+        <span class="menuBtn">Take a Photo</span>
+        <span class="menuBtn">About</span>
+        <span class="menuBtn logout">Log out</span>
+      </div>
       <div class="menu">menu</div>
       <div class="map">map</div>
       <div class="footer">footer</div>
