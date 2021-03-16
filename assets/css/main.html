@@ -118,6 +118,7 @@
 
     .appGrid {
       position: relative;
+      overflow: hidden;
       display: grid;
       grid-column-gap: 10px;
       grid-row-gap: 10px;
@@ -211,26 +212,53 @@
     }
 
     @media screen and (max-width: 1200px) {
-      .header .mainMenu{
+      .header .mainMenu {
         flex-direction: column;
         align-self: baseline;
-        margin-top: 20px;
+        margin-top: 80px;
+        position: relative;
+        right: -100vw;
+        transition: all 0.5s;
+      }
+
+      .header .mainMenu.show {
+        right: 0;
+      }
+
+      .header .mainMenu.show .bgDimmer {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        left: 0;
+        top: 70px;
+        background-color: rgba(0, 0, 0, 0.5);
       }
 
       .menuBtn.toggleMobileMenu {
         display: block;
         align-self: flex-end;
         transform: unset;
+        position: absolute;
+        right: 0;
+      }
+
+      .toggleMobileMenu.active {
+        box-shadow: -5px 0px 1px 0px #9d00ff;
+        background-color: #fcdc00;
+        color: #000000;
       }
 
       .menuBtn.logout {
         margin-left: initial;
       }
+
+
     }
 
 
 
     </style>
+
     <title></title>
   </head>
   <body>
@@ -242,18 +270,29 @@
     <div class="appGrid">
       <div class="header">
         <div class="logo">Picmapper</div>
+
         <div class="mainMenu">
-          <span class="menuBtn toggleMobileMenu">Menu</span>
+          <div class="bgDimmer"></div>
           <span class="menuBtn">View Map</span>
           <span class="menuBtn">Add/Edit Photos</span>
           <span class="menuBtn">Take a Photo</span>
           <span class="menuBtn">About</span>
           <span class="menuBtn logout">Log out</span>
         </div>
+        <span class="menuBtn toggleMobileMenu">Menu</span>
       </div>
       <div class="menu">menu</div>
       <div class="map">map</div>
       <div class="footer">footer</div>
     </div>
+    <script>
+      document.querySelector('.toggleMobileMenu').addEventListener('click',(e) => {
+        document.querySelector('.toggleMobileMenu').classList.toggle('active');
+        document.querySelector('.mainMenu').classList.toggle('show');
+
+
+
+      }, true);
+    </script>
   </body>
 </html>
