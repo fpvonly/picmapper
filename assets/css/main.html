@@ -132,10 +132,19 @@
       grid-column-end: 3;
       display: flex;
       align-items: center;
+      z-index: 9999;
     }
 
     .appGrid .menu {
       background-color: rgba(0, 0 , 0, 0.1 );
+    }
+
+    .appGrid .menu label {
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: #ffffff;
+      margin: 0 0rem 1rem 0rem;
+      width: 80%;
     }
 
     .appGrid .map {
@@ -270,7 +279,6 @@
     <div class="appGrid">
       <div class="header">
         <div class="logo">Picmapper</div>
-
         <div class="mainMenu">
           <div class="bgDimmer"></div>
           <span class="menuBtn">View Map</span>
@@ -281,8 +289,33 @@
         </div>
         <span class="menuBtn toggleMobileMenu">Menu</span>
       </div>
-      <div class="menu">menu</div>
-      <div class="map">map</div>
+      <div class="menu">
+        <form>
+          <label for="title">Image title:</label>
+          <input type="text" id="title" name="title" />
+          <label for="desc">Image title:</label>
+          <textarea id="desc" name="desc"></textarea>
+          <label for="date">Image taken date:</label>
+          <input type="date" id="date" name="date" value="2018-07-22">
+          <label for="photo">Photo file:</label>
+          <input type="file" id="photo" name="photo" accept="image/png, image/jpeg">
+          <input type="reset" value="Reset" />
+          <input type="button" value="Save Photo" />
+        </form>
+
+
+      </div>
+      <div class="map">
+        <div class="mapouter">
+          <div class="gmap_canvas">
+            <iframe id="gmap_canvas" style="width: 100%; height: 100%;" src="https://maps.google.com/maps?q=muottikatu%207%20oulu&t=k&z=11&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+            <a href="https://embedgooglemap.net/maps/45"></a>
+            <br>
+            <style>.mapouter{position:relative;text-align:right;height:100%;width:100%;}</style>
+            <style>.gmap_canvas {overflow:hidden;background:none!important;height:100%;width:100%;}</style>
+          </div>
+        </div>
+      </div>
       <div class="footer">footer</div>
     </div>
     <script>
